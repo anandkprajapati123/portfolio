@@ -218,8 +218,8 @@ body {
 .nav-logo {
   font-family: "JetBrains Mono", monospace;
   font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--foreground);
+  font-weight: 700;
+  color: var(--primary);
   text-decoration: none;
 }
 
