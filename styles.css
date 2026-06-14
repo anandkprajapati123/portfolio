@@ -700,11 +700,24 @@ body {
 }
 
 .hero-image-wrapper {
-  position: relative;
-  z-index: 2;
-  width: min(68vw, 250px);
-  height: min(68vw, 250px);
-  left: 4rem;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    border: 2px solid cyan;
+    box-shadow: 0 0 30px rgba(255, 0, 85, 0.4);
+    right: 2%;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 50%;
+    display: block;
 }
 
 @media (min-width: 768px) {
@@ -731,15 +744,6 @@ body {
   50% {
     transform: translateY(-10px) rotate(5deg);
   }
-}
-
-.profile-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 1.35rem;
-  border: 1px solid hsla(210, 26%, 86%, 0.16);
-  box-shadow: var(--shadow);
 }
 
 .hero-image::before,
