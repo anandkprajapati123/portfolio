@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (downloadBtn) {
         downloadBtn.addEventListener('click', () => {
             const link = document.createElement('a');
-            link.href = 'image & resume/Resume.pdf';
+            link.href = 'image & resume/anand.pdf';
             link.download = 'Anand Kumar Prajapati Resume.pdf';
             link.click();
             
