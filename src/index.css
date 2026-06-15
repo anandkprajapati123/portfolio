@@ -1,0 +1,411 @@
+/* SaaS Refined Colors - Default theme is Dark */
+:root {
+  /* Dark Theme variables */
+  --background: hsl(225, 22%, 6%);
+  --foreground: hsl(210, 32%, 96%);
+  --card: hsla(224, 21%, 10%, 0.78);
+  --card-foreground: hsl(210, 32%, 96%);
+  --primary: hsl(184, 82%, 54%);
+  --primary-foreground: hsl(225, 28%, 7%);
+  --accent: hsl(38, 94%, 62%);
+  --accent-soft: hsla(38, 94%, 62%, 0.13);
+  --secondary: hsl(225, 18%, 14%);
+  --secondary-foreground: hsl(210, 32%, 96%);
+  --muted: hsl(224, 16%, 17%);
+  --muted-foreground: hsl(218, 13%, 72%);
+  --border: hsla(210, 26%, 86%, 0.12);
+  --glow: hsl(184, 82%, 54%);
+  --surface: hsla(225, 18%, 13%, 0.84);
+  --surface-hover: hsla(225, 18%, 18%, 0.96);
+  --shadow: 0 24px 70px hsla(225, 40%, 2%, 0.42);
+  --glass-bg: hsla(225, 24%, 7%, 0.78);
+  --glass-border: hsla(210, 26%, 86%, 0.08);
+  --whatsapp: #25D366;
+  --radius: 1rem;
+}
+
+:root[data-theme='light'] {
+  /* Light Theme variables (Crisp Clean SaaS style) */
+  --background: hsl(210, 20%, 95%);
+  --foreground: hsl(224, 71%, 4%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(224, 71%, 4%);
+  --primary: hsl(184, 90%, 36%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(38, 94%, 44%);
+  --accent-soft: hsla(38, 94%, 44%, 0.1);
+  --secondary: hsl(210, 16%, 90%);
+  --secondary-foreground: hsl(224, 71%, 4%);
+  --muted: hsl(210, 16%, 88%);
+  --muted-foreground: hsl(218, 13%, 30%);
+  --border: hsla(210, 16%, 10%, 0.12);
+  --glow: hsl(184, 90%, 36%);
+  --surface: hsla(210, 16%, 92%, 0.84);
+  --surface-hover: hsla(210, 16%, 88%, 0.96);
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.02);
+  --glass-bg: hsla(0, 0%, 100%, 0.85);
+  --glass-border: hsla(210, 16%, 10%, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Background Gradients */
+.bg-gradient-dark {
+  background:
+    radial-gradient(
+      circle at 12% 12%,
+      hsla(184, 82%, 54%, 0.13),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 86% 4%,
+      hsla(38, 94%, 62%, 0.1),
+      transparent 25rem
+    ),
+    linear-gradient(
+      180deg,
+      hsl(225, 24%, 7%) 0%,
+      var(--background) 36%,
+      hsl(222, 20%, 8%) 100%
+    );
+  background-attachment: fixed;
+}
+
+.bg-gradient-light {
+  background:
+    radial-gradient(
+      circle at 12% 12%,
+      hsla(184, 82%, 54%, 0.06),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 86% 4%,
+      hsla(38, 94%, 62%, 0.05),
+      transparent 25rem
+    ),
+    linear-gradient(
+      180deg,
+      hsl(210, 20%, 96%) 0%,
+      var(--background) 36%,
+      hsl(210, 15%, 94%) 100%
+    );
+  background-attachment: fixed;
+}
+
+/* Smooth Transitions for Theme Swapping */
+body, nav, section, footer, div, input, textarea, button, a {
+  transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
+}
+
+::selection {
+  background: hsla(184, 82%, 54%, 0.3);
+  color: var(--foreground);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 1.1rem;
+  }
+}
+
+/* Typography */
+.text-primary {
+  color: var(--primary);
+}
+
+.text-gradient {
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    hsl(199, 95%, 68%) 48%,
+    var(--accent)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Glow Effect */
+.glow {
+  box-shadow:
+    0 0 20px hsla(184, 82%, 54%, 0.26),
+    0 0 42px hsla(184, 82%, 54%, 0.1);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.65rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), hsl(199, 92%, 62%));
+  color: var(--primary-foreground);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 16px 38px hsla(184, 82%, 54%, 0.22);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--surface-hover);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+  background: var(--secondary);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+/* Sections */
+.section {
+  padding: 5.5rem 0;
+}
+
+.section:nth-child(even) {
+  background: linear-gradient(
+    180deg,
+    hsla(224, 18%, 11%, 0.03),
+    hsla(224, 18%, 10%, 0.01)
+  );
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 4rem 0;
+  }
+}
+
+.section-header {
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 767px) {
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.section-header h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+}
+
+@media (min-width: 768px) {
+  .section-header h2 {
+    font-size: 2.75rem;
+  }
+}
+
+.section-line {
+  width: 7rem;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 9999px;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 9999;
+  background: transparent;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  width: 0%;
+  transition: width 0.1s ease-out;
+}
+
+/* Back To Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  width: 48px;
+  height: 48px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.back-to-top:hover {
+  background: var(--secondary);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-5px);
+}
+
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10000;
+}
+
+.toast {
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  color: var(--foreground);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.toast.success {
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  color: #25D366;
+}
+
+.toast.error {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #ef4444;
+}
+
+/* Custom Cursor Follower */
+.cursor-dot {
+  pointer-events: none;
+  background: var(--primary);
+}
+
+.cursor-ring {
+  pointer-events: none;
+  border: 1.5px solid var(--primary);
+  box-shadow: 0 0 15px hsla(184, 82%, 54%, 0.1);
+}
+
+/* Modals Overlay for PDF Previews */
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-content {
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+/* Animations and Keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+@keyframes reactSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,65 @@
+.servicesGrid {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.serviceCard {
+  padding: 2rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.featuredCard {
+  grid-column: 1 / -1;
+  background:
+    linear-gradient(
+      135deg,
+      hsla(184, 82%, 54%, 0.12),
+      hsla(38, 94%, 62%, 0.08) 56%,
+      transparent
+    ),
+    var(--card);
+}
+
+.serviceIcon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsla(184, 82%, 54%, 0.1);
+  border-radius: 0.75rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.serviceCard h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--foreground);
+}
+
+.serviceCard p {
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .serviceCard {
+    padding: 1.35rem;
+  }
+}

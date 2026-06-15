@@ -1,0 +1,35 @@
+.footer {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border);
+  background: hsla(225, 24%, 7%, 0.58);
+  width: 100%;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.footerLogo {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footerText {
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.footerCopyright {
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+  margin: 0;
+}
