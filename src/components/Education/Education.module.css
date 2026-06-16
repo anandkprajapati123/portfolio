@@ -9,19 +9,25 @@
   padding-left: 3.5rem;
 }
 
-.timelineLine {
-  position: absolute;
-  left: 0.45rem;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, var(--primary), var(--accent));
-  opacity: 0.35;
-}
-
 .educationCard {
   position: relative;
   margin-bottom: 2.5rem;
+}
+
+.educationCard::before {
+  content: "";
+  position: absolute;
+  left: -3.025rem;
+  top: 0;
+  bottom: -4.5rem;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary), var(--accent));
+  opacity: 0.35;
+  z-index: 1;
+}
+
+.educationCard:last-child::before {
+  bottom: 2.625rem;
 }
 
 .timelineDot {
@@ -35,6 +41,11 @@
   border-radius: 50%;
   box-shadow: 0 0 20px hsla(184, 82%, 54%, 0.34);
   z-index: 2;
+}
+
+.educationCard:last-child .timelineDot {
+  top: auto;
+  bottom: 2rem;
 }
 
 .educationDetails {
@@ -153,8 +164,8 @@
     padding-left: 1.75rem;
   }
 
-  .timelineLine {
-    left: 0.45rem;
+  .educationCard::before {
+    left: -1.3rem;
   }
 
   .timelineDot {

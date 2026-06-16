@@ -7,7 +7,7 @@ import styles from "./Services.module.css";
 const Services = () => {
   const getServiceIcon = (id) => {
     switch (id) {
-      case "web-development":
+      case "mern-stack-development":
         return <FiGlobe size={32} />;
       case "responsive-design":
         return <FiSmartphone size={32} />;

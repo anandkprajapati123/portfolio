@@ -35,10 +35,10 @@ export const aboutHighlights = [
     icon: "bolt"
   },
   {
-    id: "web-dev",
-    title: "Web Development",
+    id: "mern-dev",
+    title: "MERN Stack Developer",
     description: "Building responsive, user-friendly websites and applications",
-    icon: "web"
+    icon: "mern"
   }
 ];
 
@@ -94,9 +94,9 @@ export const skillsData = [
 
 export const servicesData = [
   {
-    id: "web-development",
-    title: "Web Development",
-    description: "Full-stack web applications with modern technologies and best practices. I build scalable, user-friendly applications that solve real-world problems. Currently working on a full-stack College Management Placement System platform with React, Node.js, Express.js, and MongoDB.",
+    id: "mern-stack-development",
+    title: "MERN Stack Development",
+    description: "From frontend interfaces to backend systems, I build complete MERN stack applications that are fast, reliable, and designed to meet user needs. My goal is to create scalable, secure, and user-friendly applications that provide real value to businesses and users.",
     featured: true
   },
   {
@@ -108,7 +108,7 @@ export const servicesData = [
   {
     id: "database-design",
     title: "Database Design",
-    description: "Efficient database architecture, indexing, queries optimization using MongoDB & MySQL.",
+    description: "Efficient database architecture, indexing, queries optimization using MongoDB.",
     featured: false
   }
 ];

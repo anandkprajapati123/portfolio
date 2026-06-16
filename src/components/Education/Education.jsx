@@ -30,8 +30,6 @@ const Education = () => {
         {/* Education Timeline */}
         <div className={styles.educationContent}>
           <div className={styles.timeline}>
-            <div className={styles.timelineLine} />
-
             {educationData.map((edu, index) => (
               <motion.div
                 key={edu.degree}

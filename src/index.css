@@ -381,6 +381,14 @@ body, nav, section, footer, div, input, textarea, button, a {
   box-shadow: 0 0 15px hsla(184, 82%, 54%, 0.1);
 }
 
+/* Hide custom cursor on mobile/tablet/touch screens */
+@media (pointer: coarse), (hover: none) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
+
 /* Modals Overlay for PDF Previews */
 .modal-overlay {
   background-color: rgba(0, 0, 0, 0.75);

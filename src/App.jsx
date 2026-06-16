@@ -74,13 +74,29 @@ const CursorFollower = () => {
   const [hidden, setHidden] = useState(true);
   const [clicked, setClicked] = useState(false);
   const [linkHovered, setLinkHovered] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
-    // Disable on mobile/touch screens
-    const isTouch = window.matchMedia("(pointer: coarse)").matches;
-    if (isTouch) return;
+    // Robust touch device check
+    const checkTouch = () => {
+      return (
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.matchMedia("(pointer: coarse)").matches
+      );
+    };
+
+    if (checkTouch()) {
+      setIsTouchDevice(true);
+      return; // Do not bind mouse events on touch devices
+    }
+
+    const handleTouchStart = () => {
+      setIsTouchDevice(true);
+    };
 
     const handleMouseMove = (e) => {
+      if (isTouchDevice) return;
       setPosition({ x: e.clientX, y: e.clientY });
       setHidden(false);
     };
@@ -90,9 +106,13 @@ const CursorFollower = () => {
     const handleMouseDown = () => setClicked(true);
     const handleMouseUp = () => setClicked(false);
 
-    const handleLinkHoverStart = () => setLinkHovered(true);
+    const handleLinkHoverStart = () => {
+      if (!isTouchDevice) setLinkHovered(true);
+    };
     const handleLinkHoverEnd = () => setLinkHovered(false);
 
+    // Fallback: if we receive any touchstart event, disable the custom cursor immediately
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
     window.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseleave", handleMouseLeave);
     document.addEventListener("mouseenter", handleMouseEnter);
@@ -115,6 +135,7 @@ const CursorFollower = () => {
     observer.observe(document.body, { childList: true, subtree: true });
 
     return () => {
+      window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
@@ -122,10 +143,9 @@ const CursorFollower = () => {
       window.removeEventListener("mouseup", handleMouseUp);
       observer.disconnect();
     };
-  }, []);
+  }, [isTouchDevice]);
 
-  const isTouch = window.matchMedia("(pointer: coarse)").matches;
-  if (isTouch || hidden) return null;
+  if (isTouchDevice || hidden) return null;
 
   return (
     <>

@@ -11,7 +11,7 @@ const About = () => {
         return <FiCode size={24} />;
       case "bolt":
         return <FiZap size={24} />;
-      case "web":
+      case "mern":
         return <FiLayers size={24} />;
       default:
         return <FiCode size={24} />;
@@ -71,11 +71,9 @@ const About = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            I'm a passionate <span className="text-primary">Software Engineer</span> from Ghaziabad, India,
-            currently pursuing B.Tech in Computer Engineering. I love turning ideas into reality through
-            code.
+            Hi, I'm Anand. A passionate <span className="text-primary">Software Engineer</span> student focused on MERN stack development. I build responsive web applications, solve coding challenges, and continuously learn new technologies to grow as a developer.
           </motion.p>
-
+          
           <motion.div
             className={styles.aboutHighlights}
             variants={containerVariants}
