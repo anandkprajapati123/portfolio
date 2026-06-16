@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowUp, FiDownload } from "react-icons/fi";
 import Navbar from "./components/Navbar/Navbar";
@@ -74,50 +74,75 @@ const CursorFollower = () => {
   const [hidden, setHidden] = useState(true);
   const [clicked, setClicked] = useState(false);
   const [linkHovered, setLinkHovered] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const lastTouchTime = useRef(0);
 
   useEffect(() => {
-    // Robust touch device check
-    const checkTouch = () => {
-      return (
-        "ontouchstart" in window ||
-        navigator.maxTouchPoints > 0 ||
-        window.matchMedia("(pointer: coarse)").matches
-      );
-    };
-
-    if (checkTouch()) {
-      setIsTouchDevice(true);
-      return; // Do not bind mouse events on touch devices
-    }
-
-    const handleTouchStart = () => {
-      setIsTouchDevice(true);
-    };
-
     const handleMouseMove = (e) => {
-      if (isTouchDevice) return;
+      // Ignore mouse movements that are emulated by touch events
+      if (Date.now() - lastTouchTime.current < 1000) return;
       setPosition({ x: e.clientX, y: e.clientY });
       setHidden(false);
     };
 
-    const handleMouseLeave = () => setHidden(true);
-    const handleMouseEnter = () => setHidden(false);
-    const handleMouseDown = () => setClicked(true);
-    const handleMouseUp = () => setClicked(false);
-
-    const handleLinkHoverStart = () => {
-      if (!isTouchDevice) setLinkHovered(true);
+    const handleMouseLeave = () => {
+      if (Date.now() - lastTouchTime.current < 1000) return;
+      setHidden(true);
     };
+
+    const handleMouseEnter = () => {
+      if (Date.now() - lastTouchTime.current < 1000) return;
+      setHidden(false);
+    };
+
+    const handleMouseDown = () => {
+      if (Date.now() - lastTouchTime.current < 1000) return;
+      setClicked(true);
+    };
+
+    const handleMouseUp = () => {
+      if (Date.now() - lastTouchTime.current < 1000) return;
+      setClicked(false);
+    };
+
+    // Touch handlers for mobile
+    const handleTouchStart = (e) => {
+      lastTouchTime.current = Date.now();
+      if (e.touches.length > 0) {
+        setPosition({ x: e.touches[0].clientX, y: e.touches[0].clientY });
+        setHidden(false);
+        setClicked(true);
+      }
+    };
+
+    const handleTouchMove = (e) => {
+      lastTouchTime.current = Date.now();
+      if (e.touches.length > 0) {
+        setPosition({ x: e.touches[0].clientX, y: e.touches[0].clientY });
+        setHidden(false);
+      }
+    };
+
+    const handleTouchEnd = () => {
+      lastTouchTime.current = Date.now();
+      setHidden(true);
+      setClicked(false);
+    };
+
+    const handleLinkHoverStart = () => setLinkHovered(true);
     const handleLinkHoverEnd = () => setLinkHovered(false);
 
-    // Fallback: if we receive any touchstart event, disable the custom cursor immediately
-    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    // Mouse listeners
     window.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseleave", handleMouseLeave);
     document.addEventListener("mouseenter", handleMouseEnter);
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
+
+    // Touch listeners
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true });
+    window.addEventListener("touchcancel", handleTouchEnd, { passive: true });
 
     // Monitor links, buttons, inputs for hover scaling
     const refreshListeners = () => {
@@ -125,27 +150,36 @@ const CursorFollower = () => {
       clickables.forEach((el) => {
         el.addEventListener("mouseenter", handleLinkHoverStart);
         el.addEventListener("mouseleave", handleLinkHoverEnd);
+        
+        // Touch hover feedback
+        el.addEventListener("touchstart", handleLinkHoverStart, { passive: true });
+        el.addEventListener("touchend", handleLinkHoverEnd, { passive: true });
       });
     };
 
     refreshListeners();
 
-    // Set observer to check for dynamic DOM additions (e.g. project list rendering)
+    // Set observer to check for dynamic DOM additions
     const observer = new MutationObserver(refreshListeners);
     observer.observe(document.body, { childList: true, subtree: true });
 
     return () => {
-      window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
+
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchend", handleTouchEnd);
+      window.removeEventListener("touchcancel", handleTouchEnd);
+
       observer.disconnect();
     };
-  }, [isTouchDevice]);
+  }, []);
 
-  if (isTouchDevice || hidden) return null;
+  if (hidden) return null;
 
   return (
     <>
