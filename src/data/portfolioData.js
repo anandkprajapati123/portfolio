@@ -137,6 +137,17 @@ export const projectsData = [
     featured: true
   },
   {
+    id: "smart-group-expense-splitter",
+    title: "Smart Group Expense Splitter",
+    subtitle: "Expense Splitter",
+    description: "Smart Group Expense Splitter is a full-stack application for managing and splitting shared expenses during trips and group activities, featuring categorized expenses, history tracking, notifications, and settlement summaries.",
+    tech: ["React.js","Vite","Tailwind","Axios","React-Router","Toastify","Node.js", "Express.js", "MongoDB", "JWT", "Bcrypt.js"],
+    thumbnail: "/image & resume/Smart-expense-splitter.png",
+    liveUrl: "https://sges-six.vercel.app/",
+    githubUrl: "https://github.com/anandkprajapati123/SGES",
+    featured: true
+  },
+  {
     id: "portfolio-website",
     title: "Portfolio Website",
     subtitle: "Developer Portfolio",
@@ -144,7 +155,7 @@ export const projectsData = [
     tech: ["React.js", "Vite", "Framer Motion", "CSS Modules"],
     thumbnail: "/image & resume/portfolio-thumbnail.png",
     liveUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/anandkprajapati123/portfolio",
     featured: false
   }
 ];
