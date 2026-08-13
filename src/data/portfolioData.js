@@ -9,7 +9,7 @@ export const personalInfo = {
   ],
   role: "Software Engineer",
   description: "I build modern, scalable web applications with clean code and a great impactful Project. Passionate about Frontend-Web Development with HTML, CSS, JavaScript, TypeScript, Bootstrap, React, Node.js, and Databases with MongoDB. Creating impactful digital solutions that make a difference.",
-  resumeUrl: "/image & resume/anand.pdf",
+  resumeUrl: "/image & resume/anand_Resume.pdf",
   resumeFilename: "Anand Kumar Prajapati Resume.pdf",
   profileImg: "/image & resume/anand.jpeg",
   location: "Ghaziabad, India",
