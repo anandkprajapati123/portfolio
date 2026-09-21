@@ -48,45 +48,46 @@ export const skillsData = [
     skills: [
       { name: "C", icon: "c", glowColor: "rgba(0, 89, 156, 0.4)" },
       { name: "C++", icon: "cpp", glowColor: "rgba(0, 68, 130, 0.4)" },
-      { name: "Java (Basic)", icon: "java", glowColor: "rgba(227, 33, 41, 0.3)" }
+      { name: "Java(Basic)", icon: "java", glowColor: "rgba(227, 33, 41, 0.3)" },
+      { name: "JavaScript", icon: "js", glowColor: "rgba(247, 223, 30, 0.4)" },
+      { name: "SQL", icon: "sql", glowColor: "rgba(51, 103, 145, 0.4)" }
     ]
   },
   {
-    category: "Frontend",
+    category: "Web Technologies",
     skills: [
-      { name: "HTML5", icon: "html", glowColor: "rgba(227, 79, 38, 0.4)" },
-      { name: "CSS3", icon: "css", glowColor: "rgba(21, 114, 182, 0.4)" },
-      { name: "JavaScript", icon: "js", glowColor: "rgba(247, 223, 30, 0.4)" },
-      { name: "TypeScript", icon: "typescript", glowColor: "rgba(49, 120, 198, 0.4)" },
-      { name: "React", icon: "react", glowColor: "rgba(97, 218, 251, 0.4)" },
+      { name: "HTML", icon: "html", glowColor: "rgba(227, 79, 38, 0.4)" },
+      { name: "CSS", icon: "css", glowColor: "rgba(21, 114, 182, 0.4)" },
+      { name: "React.js", icon: "react", glowColor: "rgba(97, 218, 251, 0.4)" },
+      { name: "Node.js", icon: "node", glowColor: "rgba(51, 153, 51, 0.4)" },
+      { name: "Express.js", icon: "express", glowColor: "rgba(255, 255, 255, 0.2)" },
       { name: "Bootstrap", icon: "bootstrap", glowColor: "rgba(117, 58, 224, 0.4)" }
     ]
   },
   {
-    category: "Backend",
+    category: "Databases",
     skills: [
-      { name: "Node.js", icon: "node", glowColor: "rgba(51, 153, 51, 0.4)" },
-      { name: "Express.js", icon: "express", glowColor: "rgba(255, 255, 255, 0.2)" },
-      { name: "REST APIs", icon: "api", glowColor: "rgba(0, 240, 255, 0.3)" }
+      { name: "MongoDB", icon: "mongodb", glowColor: "rgba(71, 162, 72, 0.4)" },
+      { name: "MySQL", icon: "mysql", glowColor: "rgba(0, 117, 143, 0.4)" }
     ]
   },
   {
-    category: "Database",
-    skills: [
-      { name: "MongoDB", icon: "mongodb", glowColor: "rgba(71, 162, 72, 0.4)" }
-    ]
-  },
-  {
-    category: "Tools & Others",
+    category: "Developer Tools",
     skills: [
       { name: "Git", icon: "git", glowColor: "rgba(240, 80, 50, 0.4)" },
       { name: "GitHub", icon: "github", glowColor: "rgba(255, 255, 255, 0.3)" },
       { name: "VS Code", icon: "vscode", glowColor: "rgba(0, 122, 204, 0.4)" },
-      { name: "Antigravity", icon: "antigravity", glowColor: "rgba(0, 240, 255, 0.3)" },
+      { name: "Antigravity IDE", icon: "antigravity", glowColor: "rgba(0, 240, 255, 0.3)" },
       { name: "Figma", icon: "figma", glowColor: "rgba(242, 78, 29, 0.4)" },
-      { name: "Postman", icon: "postman", glowColor: "rgba(255, 108, 55, 0.4)" },
-      { name: "Docker", icon: "docker", glowColor: "rgba(36, 150, 237, 0.4)" },
-      { name: "Kubernetes", icon: "kubernetes", glowColor: "rgba(50, 108, 230, 0.4)" }
+      { name: "Postman", icon: "postman", glowColor: "rgba(255, 108, 55, 0.4)" }
+    ]
+  },
+  {
+    category: "AI Technologies",
+    skills: [
+      { name: "Agentic AI", icon: "ai", glowColor: "rgba(255, 105, 180, 0.4)" },
+      { name: "Generative AI", icon: "generativeai", glowColor: "rgba(138, 43, 226, 0.4)" },
+      { name: "LangChain", icon: "langchain", glowColor: "rgba(255, 165, 0, 0.4)" }
     ]
   }
 ];

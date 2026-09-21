@@ -12,6 +12,9 @@ import {
   FaBootstrap,
   FaFigma,
   FaJava,
+  FaDatabase,
+  FaRobot,
+  FaBrain,
 } from "react-icons/fa";
 import {
   SiExpress,
@@ -21,6 +24,7 @@ import {
   SiCplusplus,
   SiTypescript,
   SiKubernetes,
+  SiMysql,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { FiCpu, FiFeather } from "react-icons/fi";
@@ -73,6 +77,16 @@ const Skills = () => {
         return <FaDocker className={styles.docker} />;
       case "kubernetes":
         return <SiKubernetes className={styles.kubernetes} />;
+      case "sql":
+        return <FaDatabase className={styles.sql} />;
+      case "mysql":
+        return <SiMysql className={styles.mysql} />;
+      case "ai":
+        return <FaRobot className={styles.ai} />;
+      case "generativeai":
+        return <FaBrain className={styles.generativeai} />;
+      case "langchain":
+        return <FiCpu className={styles.langchain} />;
       default:
         return <FiCpu className={styles.api} />;
     }
