@@ -5,11 +5,12 @@ export const personalInfo = {
   titles: [
     "Full Stack Developer",
     "MERN Developer",
+    "Data Analyst",
     "Software Engineer"
   ],
   role: "Software Engineer",
   description: "I build modern, scalable web applications with clean code and a great impactful Project. Passionate about Frontend-Web Development with HTML, CSS, JavaScript, TypeScript, Bootstrap, React, Node.js, and Databases with MongoDB. Creating impactful digital solutions that make a difference.",
-  resumeUrl: "/image & resume/anand_Resume.pdf",
+  resumeUrl: "/image & resume/AnandResume.pdf",
   resumeFilename: "Anand Kumar Prajapati Resume.pdf",
   profileImg: "/image & resume/anand.jpeg",
   location: "Ghaziabad, India",
@@ -39,6 +40,12 @@ export const aboutHighlights = [
     title: "MERN Stack Developer",
     description: "Building responsive, user-friendly websites and applications",
     icon: "mern"
+  },
+  {
+    id: "data-analyst",
+    title: "Data Analyst",
+    description: "Deriving actionable insights and creating interactive dashboards using Excel, SQL & Power BI",
+    icon: "analytics"
   }
 ];
 
@@ -61,7 +68,8 @@ export const skillsData = [
       { name: "React.js", icon: "react", glowColor: "rgba(97, 218, 251, 0.4)" },
       { name: "Node.js", icon: "node", glowColor: "rgba(51, 153, 51, 0.4)" },
       { name: "Express.js", icon: "express", glowColor: "rgba(255, 255, 255, 0.2)" },
-      { name: "Bootstrap", icon: "bootstrap", glowColor: "rgba(117, 58, 224, 0.4)" }
+      { name: "Bootstrap", icon: "bootstrap", glowColor: "rgba(117, 58, 224, 0.4)" },
+      { name: "REST APIs", icon: "api", glowColor: "rgba(0, 240, 255, 0.4)" }
     ]
   },
   {
@@ -78,16 +86,18 @@ export const skillsData = [
       { name: "GitHub", icon: "github", glowColor: "rgba(255, 255, 255, 0.3)" },
       { name: "VS Code", icon: "vscode", glowColor: "rgba(0, 122, 204, 0.4)" },
       { name: "Antigravity IDE", icon: "antigravity", glowColor: "rgba(0, 240, 255, 0.3)" },
-      { name: "Figma", icon: "figma", glowColor: "rgba(242, 78, 29, 0.4)" },
-      { name: "Postman", icon: "postman", glowColor: "rgba(255, 108, 55, 0.4)" }
+      { name: "Postman", icon: "postman", glowColor: "rgba(255, 108, 55, 0.4)" },
+      { name: "MS Excel", icon: "excel", glowColor: "rgba(16, 124, 65, 0.4)" },
+      { name: "MS Word", icon: "word", glowColor: "rgba(24, 90, 189, 0.4)" }
     ]
   },
   {
     category: "AI Technologies",
     skills: [
-      { name: "Agentic AI", icon: "ai", glowColor: "rgba(255, 105, 180, 0.4)" },
       { name: "Generative AI", icon: "generativeai", glowColor: "rgba(138, 43, 226, 0.4)" },
-      { name: "LangChain", icon: "langchain", glowColor: "rgba(255, 165, 0, 0.4)" }
+      { name: "LLM", icon: "llm", glowColor: "rgba(6, 182, 212, 0.4)" },
+      { name: "RAG", icon: "rag", glowColor: "rgba(245, 158, 11, 0.4)" },
+      { name: "Prompt Engineering", icon: "prompt", glowColor: "rgba(236, 72, 153, 0.4)" }
     ]
   }
 ];
@@ -99,6 +109,12 @@ export const servicesData = [
     title: "MERN Stack Development",
     description: "From frontend interfaces to backend systems, I build complete MERN stack applications that are fast, reliable, and designed to meet user needs. My goal is to create scalable, secure, and user-friendly applications that provide real value to businesses and users.",
     featured: true
+  },
+  {
+    id: "data-analytics",
+    title: "Data Analytics & Visualization",
+    description: "Transforming raw data into meaningful insights using Excel, SQL, and interactive Power BI dashboards. Skilled in data cleaning, exploratory data analysis (EDA), and tracking key performance indicators (KPIs) to drive data-informed decisions.",
+    featured: false
   },
   {
     id: "responsive-design",
@@ -135,6 +151,17 @@ export const projectsData = [
     thumbnail: "/image & resume/AiChat-thumbnail.png",
     liveUrl: "https://smartaichatbuddy.netlify.app/",
     githubUrl: "https://github.com/anandkprajapati123/ChatBuddy",
+    featured: true
+  },
+  {
+    id: "employee-attendance-tracker",
+    title: "Employee Attendance Productivity Tracker",
+    subtitle: "Data Analytics & Dashboard",
+    description: "Developed an Employee Attendance and Productivity Tracker using Excel and Power BI to analyze attendance patterns, working hours, overtime, and task completion across 2,000 records with an interactive KPI dashboard.",
+    tech: ["Excel", "Power BI", "Data Cleaning", "Data Analysis", "KPIs"],
+    thumbnail: "/image & resume/employee-attendance-thumbnail.png",
+    liveUrl: "https://github.com/anandkprajapati123",
+    githubUrl: "https://github.com/anandkprajapati123",
     featured: true
   },
   {

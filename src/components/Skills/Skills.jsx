@@ -8,13 +8,14 @@ import {
   FaNodeJs,
   FaGitAlt,
   FaGithub,
-  FaDocker,
   FaBootstrap,
-  FaFigma,
   FaJava,
   FaDatabase,
   FaRobot,
   FaBrain,
+  FaFileExcel,
+  FaFileWord,
+  FaNetworkWired,
 } from "react-icons/fa";
 import {
   SiExpress,
@@ -23,11 +24,12 @@ import {
   SiC,
   SiCplusplus,
   SiTypescript,
-  SiKubernetes,
   SiMysql,
+  SiChatbot,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { FiCpu, FiFeather } from "react-icons/fi";
+import { TbPrompt, TbApi } from "react-icons/tb";
 import { skillsData } from "../../data/portfolioData";
 import styles from "./Skills.module.css";
 
@@ -58,7 +60,7 @@ const Skills = () => {
       case "express":
         return <SiExpress className={styles.express} />;
       case "api":
-        return <FiCpu className={styles.api} />;
+        return <TbApi className={styles.api} />;
       case "mongodb":
         return <SiMongodb className={styles.mongo} />;
       case "git":
@@ -69,24 +71,26 @@ const Skills = () => {
         return <VscVscode className={styles.vscode} />;
       case "antigravity":
         return <FiFeather className={styles.antigravity} />;
-      case "figma":
-        return <FaFigma className={styles.figma} />;
       case "postman":
         return <SiPostman className={styles.postman} />;
-      case "docker":
-        return <FaDocker className={styles.docker} />;
-      case "kubernetes":
-        return <SiKubernetes className={styles.kubernetes} />;
+      case "excel":
+        return <FaFileExcel className={styles.excel} />;
+      case "word":
+        return <FaFileWord className={styles.word} />;
       case "sql":
         return <FaDatabase className={styles.sql} />;
       case "mysql":
         return <SiMysql className={styles.mysql} />;
-      case "ai":
-        return <FaRobot className={styles.ai} />;
       case "generativeai":
         return <FaBrain className={styles.generativeai} />;
-      case "langchain":
-        return <FiCpu className={styles.langchain} />;
+      case "llm":
+        return <SiChatbot className={styles.llm} />;
+      case "rag":
+        return <FaNetworkWired className={styles.rag} />;
+      case "prompt":
+        return <TbPrompt className={styles.prompt} />;
+      case "ai":
+        return <FaRobot className={styles.ai} />;
       default:
         return <FiCpu className={styles.api} />;
     }

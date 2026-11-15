@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FiGlobe, FiSmartphone, FiDatabase } from "react-icons/fi";
+import { FiGlobe, FiSmartphone, FiDatabase, FiBarChart2 } from "react-icons/fi";
 import { servicesData } from "../../data/portfolioData";
 import styles from "./Services.module.css";
 
@@ -9,6 +9,8 @@ const Services = () => {
     switch (id) {
       case "mern-stack-development":
         return <FiGlobe size={32} />;
+      case "data-analytics":
+        return <FiBarChart2 size={32} />;
       case "responsive-design":
         return <FiSmartphone size={32} />;
       case "database-design":

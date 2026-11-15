@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FiCode, FiZap, FiLayers } from "react-icons/fi";
+import { FiCode, FiZap, FiLayers, FiBarChart2 } from "react-icons/fi";
 import { aboutHighlights } from "../../data/portfolioData";
 import styles from "./About.module.css";
 
@@ -13,6 +13,8 @@ const About = () => {
         return <FiZap size={24} />;
       case "mern":
         return <FiLayers size={24} />;
+      case "analytics":
+        return <FiBarChart2 size={24} />;
       default:
         return <FiCode size={24} />;
     }
@@ -71,7 +73,7 @@ const About = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            Hi, I'm Anand. A passionate <span className="text-primary">Software Engineer</span> student focused on MERN stack development. I build responsive web applications, solve coding challenges, and continuously learn new technologies to grow as a developer.
+            Hi, I'm Anand. A passionate <span className="text-primary">Software Engineer</span> and <span className="text-primary">Data Analyst</span> focused on full-stack development and data-driven solutions. I build scalable web applications with the MERN stack and transform data into actionable insights through interactive dashboards.
           </motion.p>
           
           <motion.div

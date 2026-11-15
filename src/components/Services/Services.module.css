@@ -22,7 +22,6 @@
 }
 
 .featuredCard {
-  grid-column: 1 / -1;
   background:
     linear-gradient(
       135deg,

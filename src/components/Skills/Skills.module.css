@@ -135,20 +135,32 @@
   color: #00f0ff;
 }
 
-.figma {
-  color: #f24e1e;
-}
-
 .postman {
   color: #ff6c37;
 }
 
-.docker {
-  color: #2496ed;
+.excel {
+  color: #107c41;
 }
 
-.kubernetes {
-  color: #326ce5;
+.word {
+  color: #185abd;
+}
+
+.generativeai {
+  color: #a855f7;
+}
+
+.llm {
+  color: #06b6d4;
+}
+
+.rag {
+  color: #f59e0b;
+}
+
+.prompt {
+  color: #ec4899;
 }
 
 @keyframes reactSpin {
@@ -188,19 +200,35 @@
   color: #0062a3;
 }
 
-:root[data-theme='light'] .docker {
-  color: #1d78c1;
-}
-
-:root[data-theme='light'] .kubernetes {
-  color: #2050b3;
-}
-
 :root[data-theme='light'] .mongo {
   color: #117a3e;
 }
 
 :root[data-theme='light'] .node {
   color: #2d6b2b;
+}
+
+:root[data-theme='light'] .excel {
+  color: #107c41;
+}
+
+:root[data-theme='light'] .word {
+  color: #185abd;
+}
+
+:root[data-theme='light'] .generativeai {
+  color: #7c3aed;
+}
+
+:root[data-theme='light'] .llm {
+  color: #0891b2;
+}
+
+:root[data-theme='light'] .rag {
+  color: #d97706;
+}
+
+:root[data-theme='light'] .prompt {
+  color: #db2777;
 }
 
